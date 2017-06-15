@@ -1,7 +1,6 @@
 'use strict';
 
 const getJsonList = (urlList, callback)=>{
-  console.log(urlList);
   const xhr = new XMLHttpRequest();
   xhr.addEventListener('load', ()=>{
     if(xhr.status !== 200){

@@ -11,13 +11,15 @@ const render = (rootToLoad)=>{
 }
 
 const state = {
-  allPokemon: null
+  allPokemon: null,
+  pokemon: null
 }
 
 const documentLoad = ()=>{
-  getJsonList('http://pokeapi.co/api/v2/pokemon/?limit=8', (error, json)=>{
+  getJsonList('http://pokeapi.co/api/v2/pokedex/1/', (error, json)=>{
     if(error){alert(error.message);}
     state.allPokemon = json;
+    console.log(json);
     let rootToLoad = $('#root');
     render(rootToLoad);
   });

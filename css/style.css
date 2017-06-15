@@ -1,8 +1,9 @@
-.icon-container a {
-  height: 1.75rem; }
-.icon-container .bg-image {
+.bg-image {
   background-repeat: no-repeat;
   background-size: cover; }
+
+.icon-container a {
+  height: 1.75rem; }
 .icon-container #pokeball {
   background-image: url("../icon/pokeball_gray.png"); }
 .icon-container #heart {
@@ -10,7 +11,11 @@
 .icon-container #data {
   background-image: url("../icon/data.png"); }
 
-.h-100pxx {
-  height: 100px; }
+#close-modal {
+  background-image: url("../icon/cross-out.png"); }
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 69rem; } }
 
 /*# sourceMappingURL=style.css.map */

@@ -1,10 +1,10 @@
+.bg-image{
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .icon-container{
   a{
     height: 1.75rem;
-  }
-  .bg-image{
-    background-repeat: no-repeat;
-    background-size: cover;
   }
   #pokeball{
     background-image: url('../icon/pokeball_gray.png');
@@ -17,7 +17,12 @@
   }
 }
 
-//prueba
-.h-100pxx{
-  height: 100px;
+#close-modal{
+  background-image: url('../icon/cross-out.png');
+}
+
+@media (min-width: 576px){
+  .modal-dialog {
+    max-width: 69rem;
+  }
 }

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" href="icon/favicon.ico">
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/style.css">
   <title>Pokedex</title>
@@ -12,12 +13,31 @@
   <header class="container-fluid">
     <h1>Pokédex</h1>
   </header>
-  <main id="root" class="container"></main>
+  <section id="root" class="container"></section>
+  <div class="modal fade" id="pokemon-information" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modalTitle">Title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-5" id="poke-item"></div>
+        <div class="col-7">
+          <p id="description"></p>
+          <div class="card-primary m-auto row" id="modal-card"></div>
+      </div>
+    </div>
+  </div>
+</div>
   <script src="js/vendor/jquery-3.2.1.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
-  <script src="js/utils/filter.js"></script>
   <script src="js/utils/getJson.js"></script>
+  <script src="js/utils/filter.js"></script>
   <script src="js/components/pokemonGrid.js"></script>
+  <script src="js/components/modalDetails.js"></script>
   <script src="js/index.js"></script>
 </body>
 </html>
