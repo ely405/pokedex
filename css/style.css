@@ -1,0 +1,16 @@
+.icon-container a {
+  height: 1.75rem; }
+.icon-container .bg-image {
+  background-repeat: no-repeat;
+  background-size: cover; }
+.icon-container #pokeball {
+  background-image: url("../icon/pokeball_gray.png"); }
+.icon-container #heart {
+  background-image: url("../icon/valentines-heart.png"); }
+.icon-container #data {
+  background-image: url("../icon/data.png"); }
+
+.h-100pxx {
+  height: 100px; }
+
+/*# sourceMappingURL=style.css.map */
