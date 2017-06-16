@@ -15,6 +15,11 @@ const createPokemonItem = (updateFunction, pokemon, index)=>{
 
   pokeball.click(()=>{
     createModalDetails(pokemon, updateFunction, createPokemonItem(updateFunction, pokemon, index), index);
+    $.ajax('http://pokeapi.co/api/v2/pokemon-species/'+index+'/',{
+      success: ()=>{
+        console.log(index);
+      }
+    });
   });
   return itemContainer;
 }

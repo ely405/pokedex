@@ -3,17 +3,11 @@
 const createModalDetails = (pokemon, updateFunction, pokemonItem, index)=>{
   const modealTitle = $('#modalTitle').html(pokemon.pokemon_species.name);
   const pokeItem = $('#poke-item').html(pokemonItem);
-  getJsonList('http://pokeapi.co/api/v2/pokemon-species/'+index+'/', (error, json)=>{
-    if(error){alert(error.message);}
-    state.pokemon = json;
-    console.log(json);
-    let left = $('<div/>',{'class':'col-6'}).append(createModalCardItem(json, updateFunction));
-    const modalCard = $('#modal-card').append(left);
-  });
+  let left = $('<div/>',{'class':'col-6'}).append(createModalCardItem(json, updateFunction));
+  const modalCard = $('#modal-card').append(left);
 }
 
 const createModalCardItem = (pokemon, updateFunction)=>{
-  console.log('cretate');
   let arr = ['genera', 'shape', 'color', 'generation']
   let description = pokemon.flavor_text_entries;
   description.filter((e)=>{

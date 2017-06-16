@@ -16,12 +16,14 @@ const state = {
 }
 
 const documentLoad = ()=>{
-  getJsonList('http://pokeapi.co/api/v2/pokedex/1/', (error, json)=>{
-    if(error){alert(error.message);}
-    state.allPokemon = json;
-    console.log(json);
-    let rootToLoad = $('#root');
-    render(rootToLoad);
+
+  $.ajax('http://pokeapi.co/api/v2/pokedex/1/', {
+    success: (response)=>{
+      state.allPokemon = response;
+      let rootToLoad = $('#root');
+      render(rootToLoad);
+      alert('bien');
+      }
   });
 }
 
