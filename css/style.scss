@@ -1,8 +1,24 @@
+@import "components/color";
+
+.bg-light-gray{
+  background-color: $light-gray;
+}
+
 .bg-image{
   background-repeat: no-repeat;
   background-size: cover;
 }
 .icon-container{
+  background-image: url('../icon/notch-collectibles.png');
+  background-size: contain;
+  background-position-y: 95%;
+  //prueba
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  p{
+    margin: 0;
+  }
   a{
     height: 1.75rem;
   }
@@ -25,4 +41,15 @@
   .modal-dialog {
     max-width: 69rem;
   }
+}
+//prueba
+.height-30pr{
+  height: 30%;
+}
+.height-70pr{
+  height: 70%;
+}
+.img-res{
+  width: 100%;
+  height: auto;
 }
