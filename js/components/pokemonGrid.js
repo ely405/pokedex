@@ -1,24 +1,35 @@
 'use strict';
 
-
 const createPokemonItem = (updateFunction, pokemon, index)=>{
-  let itemContainer = $('<div/>',{'class':'col-8 col-sm-3'});
-  let img = $('<img/>',{'src':'http://serebii.net/art/th/'+index+'.png'});
-  let iconContainer = $('<div/>',{'class':'row icon-container d-flex justify-content-center'});
-  let pokeball = $('<a/>',{'href':'#', 'id':'pokeball', 'class':'col-1 bg-image', 'data-toggle':'modal', 'data-target':'#pokemon-information'});
-  let heart = $('<a/>',{'href':'#', 'id':'heart', 'class':'col-1 bg-image'});
-  let data = $('<a/>',{'href':'#', 'id':'data', 'class':'col-1 bg-image'});
-  let pokeName = $('<p/>', {'class':'col-12 text-center'}).html(pokemon.pokemon_species.name);
+  console.log(index);
+  let itemContainer = $('<div/>',{'class':'col-8 col-sm-3 col-md-2 bg-light-gray d-flex flex-column align-items-center justify-content-between p-0 m-3'});
+  let imgContainer = $('<figure/>',{'class':'height-70pr m-0'})
+  let img = $('<img/>',{'src':'http://serebii.net/art/th/'+index+'.png', 'alt':pokemon.name, 'data-index':index, 'class':'img-fluid poke-img'});
+  let infoContainer = $('<div/>',{'class':'trap height-30pr'});
+  let iconContainer =  $('<div/>',{'class':'row d-flex justify-content-center'});
+  let pokeball = $('<a/>',{'href':'#', 'id':'pokeball', 'class':'col-2 bg-image h-32', 'data-toggle':'modal', 'data-target':'#pokemon-information'});
+  let heart = $('<a/>',{'href':'#', 'id':'heart', 'class':'col-2 bg-image h-32'});
+  let data = $('<a/>',{'href':'#', 'id':'data', 'class':'col-2 bg-image h-32'});
+  let pokeName = $('<p/>',{'class':'text-center'}).html(pokemon.name);
 
-  iconContainer.append(pokeball, heart, data, pokeName);
-  itemContainer.append(img, iconContainer);
+  infoContainer.append(iconContainer.append(pokeball, heart, data), pokeName);
+  itemContainer.append(imgContainer.append(img), infoContainer);
 
   pokeball.click(()=>{
-    createModalDetails(pokemon, updateFunction, createPokemonItem(updateFunction, pokemon, index), index);
     $.ajax('http://pokeapi.co/api/v2/pokemon-species/'+index+'/',{
-      success: ()=>{
-        console.log(index);
+      success: (response)=>{
+        createModalDetails(response, updateFunction, createPokemonItem(updateFunction, pokemon, index), index);
+        state.pokemon = response;
+        console.log(state.pokemon);
+        $('#poke-category').html(response.genera[2].genus);
+        console.log(response.genera[2].genus);
       }
+    });
+    $.getJSON('http://pokeapi.co/api/v2/pokemon/'+index+'/', (response)=>{
+      $('#poke-height').html(response.height);
+      $('#poke-ability').html(response.abilities[0].ability.name);
+      console.log(response.abilities[0].ability.name);
+      $('#poke-weight').html(response.weight);
     });
   });
   return itemContainer;
@@ -30,6 +41,12 @@ const reRender = (container, filter, updateFunction)=>{
   const filteredPokemons = filteredPokemonByName(state.allPokemon, filter);
   if(filteredPokemons.length > 0){
     $.each(filteredPokemons, (index, pokemon)=>{
+      // console.log(index+1);
+      //   let dataIndex = pokemon.attr('data-index');
+      //   console.log(dataIndex);
+      //   if (pokemon.attr('data-index') > 1) {
+      //     container.append(createPokemonItem(updateFunction, pokemon, dataIndex));
+      //   }
         container.append(createPokemonItem(updateFunction, pokemon, index+1));
     });
   }else{

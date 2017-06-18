@@ -13,62 +13,7 @@
   <header class="container-fluid">
     <h1>Pokédex</h1>
   </header>
-  <section id="root" class="container">
-    <section class="row justify-content-around">
-      <div class="col-8 col-sm-3 bg-light-gray">
-        <div class="height-70pr">
-          <img src="http://serebii.net/art/th/1.png" class="img-res">
-        </div>
-        <div class="row icon-container d-flex height-30pr bg-image">
-          <div>
-            <a href="#" id="pokeball" class="col-1 bg-image" data-toggle="modal" data-target="#pokemon-information"></a>
-            <a href="#" id="heart" class="col-1 bg-image"></a>
-            <a href="#" id="data" class="col-1 bg-image"></a>
-          </div>
-          <p class="text-center">bulbasaur</p>
-        </div>
-      </div>
-      <div class="col-8 col-sm-3 bg-light-gray">
-        <div class="height-70pr">
-          <img src="http://serebii.net/art/th/3.png" class="img-res">
-        </div>
-        <div class="row icon-container d-flex height-30pr bg-image">
-          <div>
-            <a href="#" id="pokeball" class="col-1 bg-image" data-toggle="modal" data-target="#pokemon-information"></a>
-            <a href="#" id="heart" class="col-1 bg-image"></a>
-            <a href="#" id="data" class="col-1 bg-image"></a>
-          </div>
-          <p class="text-center">venusaur</p>
-        </div>
-      </div>
-      <div class="col-8 col-sm-3 bg-light-gray">
-        <div class="height-70pr">
-          <img src="http://serebii.net/art/th/7.png" class="img-res">
-        </div>
-        <div class="row icon-container d-flex height-30pr bg-image">
-          <div>
-            <a href="#" id="pokeball" class="col-1 bg-image" data-toggle="modal" data-target="#pokemon-information"></a>
-            <a href="#" id="heart" class="col-1 bg-image"></a>
-            <a href="#" id="data" class="col-1 bg-image"></a>
-          </div>
-          <p class="text-center">squirtle</p>
-        </div>
-      </div>
-      <div class="col-8 col-sm-3 bg-light-gray">
-        <div class="height-70pr">
-          <img src="http://serebii.net/art/th/4.png" class="img-res">
-        </div>
-        <div class="row icon-container d-flex height-30pr bg-image">
-          <div>
-            <a href="#" id="pokeball" class="col-1 bg-image" data-toggle="modal" data-target="#pokemon-information"></a>
-            <a href="#" id="heart" class="col-1 bg-image"></a>
-            <a href="#" id="data" class="col-1 bg-image"></a>
-          </div>
-          <p>charmander</p>
-        </div>
-      </div>
-    </section>
-  </section>
+  <section id="root" class="container"></section>
   <div class="modal fade" id="pokemon-information" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -82,7 +27,28 @@
           <div class="col-5" id="poke-item"></div>
           <div class="col-7">
             <p id="description"></p>
-            <div class="card-primary m-auto row" id="modal-card"></div>
+            <div class="card-primary m-auto row" id="modal-card">
+              <div class="col-sm-6">
+                <p>Altura</p>
+                <p id="poke-height"></p>
+              </div>
+              <div class="col-sm-6">
+                <p>Categoría</p>
+                <p id="poke-category"></p>
+              </div>
+              <div class="col-sm-6">
+                <p>Peso</p>
+                <p id="poke-weight"></p>
+              </div>
+              <div class="col-sm-6">
+                <p>Habilidad</p>
+                <p id="poke-ability"></p>
+              </div>
+              <div class="col-sm-6">
+                <p>Sexo</p>
+                <p id="poke-sex"></p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

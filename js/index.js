@@ -17,9 +17,10 @@ const state = {
 
 const documentLoad = ()=>{
 
-  $.ajax('http://pokeapi.co/api/v2/pokedex/1/', {
-    success: (response)=>{
-      state.allPokemon = response;
+  $.ajax('http://pokeapi.co/api/v2/pokemon/', {
+    success: (json)=>{
+      console.log(json);
+      state.allPokemon = json;
       let rootToLoad = $('#root');
       render(rootToLoad);
       alert('bien');

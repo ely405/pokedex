@@ -1,27 +1,24 @@
 .bg-light-gray {
   background-color: #dbdbdb; }
 
+.bg-white {
+  background-color: white; }
+
 .bg-image {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.icon-container {
-  background-image: url("../icon/notch-collectibles.png");
-  background-size: contain;
-  background-position-y: 95%;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: center; }
-  .icon-container p {
-    margin: 0; }
-  .icon-container a {
-    height: 1.75rem; }
-  .icon-container #pokeball {
-    background-image: url("../icon/pokeball_gray.png"); }
-  .icon-container #heart {
-    background-image: url("../icon/valentines-heart.png"); }
-  .icon-container #data {
-    background-image: url("../icon/data.png"); }
+.h-32 {
+  height: 2rem; }
+
+#pokeball {
+  background-image: url("../icon/pokeball_gray.png"); }
+
+#heart {
+  background-image: url("../icon/valentines-heart.png"); }
+
+#data {
+  background-image: url("../icon/data.png"); }
 
 #close-modal {
   background-image: url("../icon/cross-out.png"); }
@@ -38,5 +35,12 @@
 .img-res {
   width: 100%;
   height: auto; }
+
+.trap {
+  width: 100%;
+  height: 0px;
+  border-right: 20px solid transparent;
+  border-left: 20px solid transparent;
+  border-bottom: 70px solid white; }
 
 /*# sourceMappingURL=style.css.map */
