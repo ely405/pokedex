@@ -17,7 +17,7 @@ const state = {
 
 const documentLoad = ()=>{
 
-  $.ajax('http://pokeapi.co/api/v2/pokemon/?limit=811', {
+  $.ajax('http://pokeapi.co/api/v2/pokemon/?limit=100', {
     success: (json)=>{
       state.allPokemon = json;
       let rootToLoad = $('#root');
