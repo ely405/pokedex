@@ -1,10 +1,12 @@
 'use strict';
 
 const createModalDetails = (pokemon, updateFunction, pokemonItem, index)=>{
+  console.log(pokemon);
   const modealTitle = $('#modalTitle').html(pokemon.name);
   const pokeItem = $('#poke-item').html(pokemonItem);
   let left = $('<div/>',{'class':'col-6'}).append(createModalCardItem(pokemon, updateFunction, index));
   const modalCard = $('#modal-card').append(left);
+  return modalCard;
 }
 
 const createModalCardItem = (pokemon, updateFunction, index)=>{

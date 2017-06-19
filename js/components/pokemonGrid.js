@@ -1,7 +1,7 @@
 'use strict';
 
-const containItem = (pokenumber, pokemon)=>{
-  let div = $('<div/>');
+const containItem = (pokenumber, pokemon, updateFunction)=>{
+  let div = $('<div/>',{'class':'h-100pr'});
   let imgContainer = $('<figure/>',{'class':'height-70pr m-0'})
   let img = $('<img/>',{'src':'http://serebii.net/art/th/'+pokenumber+'.png', 'alt':pokemon.name, 'data-index':pokenumber, 'class':'img-fluid poke-img'});
   let infoContainer = $('<div/>',{'class':'trap height-30pr'});
@@ -12,19 +12,13 @@ const containItem = (pokenumber, pokemon)=>{
   let pokeName = $('<p/>',{'class':'text-center'}).html(pokemon.name);
   infoContainer.append(iconContainer.append(pokeball, heart, data), pokeName);
   div.append(imgContainer.append(img), infoContainer);
-  return div;
-}
 
-
-const createPokemonItem = (updateFunction, pokemon, pokenumber)=>{
-  let itemContainer = $('<div/>',{'class':'col-8 col-sm-3 col-md-2 bg-light-gray d-flex flex-column align-items-center justify-content-between p-0 m-3'});
-
-  itemContainer.append(containItem(pokenumber, pokemon));
-
-  $('#pokeball').click(()=>{
+  pokeball.click(()=>{
+    alert('click')
     $.ajax('http://pokeapi.co/api/v2/pokemon-species/'+pokenumber+'/',{
       success: (response)=>{
-        createModalDetails(response, updateFunction, createPokemonItemModal(pokenumber, pokemon), pokemon);
+        console.log(response);
+        createModalDetails(response, updateFunction, createPokeItemModal(pokenumber, pokemon), pokemon);
         state.pokemon = response;
         $('#poke-category').html(response.genera[2].genus);
         console.log(response.genera[2].genus);
@@ -45,6 +39,16 @@ const createPokemonItem = (updateFunction, pokemon, pokenumber)=>{
       });
     });
   });
+
+  return div;
+}
+
+
+const createPokemonItem = (updateFunction, pokemon, pokenumber)=>{
+  let itemContainer = $('<div/>',{'class':'col-8 col-sm-3 col-md-2 bg-light-gray d-flex flex-column align-items-center justify-content-between p-0 m-3'});
+
+  itemContainer.append(containItem(pokenumber, pokemon, updateFunction));
+
   return itemContainer;
 }
 
