@@ -14,14 +14,11 @@ const containItem = (pokenumber, pokemon, updateFunction)=>{
   div.append(imgContainer.append(img), infoContainer);
 
   pokeball.click(()=>{
-    alert('click')
     $.ajax('http://pokeapi.co/api/v2/pokemon-species/'+pokenumber+'/',{
       success: (response)=>{
-        console.log(response);
         createModalDetails(response, updateFunction, createPokeItemModal(pokenumber, pokemon), pokemon);
         state.pokemon = response;
         $('#poke-category').html(response.genera[2].genus);
-        console.log(response.genera[2].genus);
       }
     });
     $.getJSON('http://pokeapi.co/api/v2/pokemon/'+pokenumber+'/', (response)=>{
@@ -33,8 +30,6 @@ const containItem = (pokenumber, pokemon, updateFunction)=>{
       $.each(allTypes, (index, element)=>{
         $('.type-container').empty();
         let item = $('<button/>',{'class':'mb-0'}).html(element.type.name);
-        console.log(element);
-        console.log(element.type.name);
         $('.type-container').append(item);
       });
     });

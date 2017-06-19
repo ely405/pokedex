@@ -1,5 +1,14 @@
 @import "components/color";
 
+@font-face {
+  font-family: 'Flexo';
+  src: url("../font/Flexo/Flexo-Regular.otf");
+}
+
+*{
+  font-family: 'Flexo', sans-serif;
+}
+
 .bg-light-gray{
   background-color: $light-gray;
 }
@@ -12,6 +21,9 @@
 }
 .c-white{
   color: white;
+}
+.c-red{
+  color: #eb6363;
 }
 .bg-image{
   background-repeat: no-repeat;

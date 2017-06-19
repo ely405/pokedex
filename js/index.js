@@ -19,11 +19,9 @@ const documentLoad = ()=>{
 
   $.ajax('http://pokeapi.co/api/v2/pokemon/?limit=811', {
     success: (json)=>{
-      console.log(json);
       state.allPokemon = json;
       let rootToLoad = $('#root');
       render(rootToLoad);
-      alert('bien');
       }
   });
 }

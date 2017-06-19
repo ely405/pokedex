@@ -1,51 +1,35 @@
-.bg-light-gray {
-  background-color: #dbdbdb; }
+@font-face { font-family: 'Flexo'; src: url("../font/Flexo/Flexo-Regular.otf"); }
+* { font-family: 'Flexo', sans-serif; }
 
-.bg-white {
-  background-color: white; }
+.bg-light-gray { background-color: #dbdbdb; }
 
-.bg-light-blue {
-  background-color: #36a4d3; }
+.bg-white { background-color: white; }
 
-.c-white {
-  color: white; }
+.bg-light-blue { background-color: #36a4d3; }
 
-.bg-image {
-  background-repeat: no-repeat;
-  background-size: cover; }
+.c-white { color: white; }
 
-.h-32 {
-  height: 2rem; }
+.c-red { color: #eb6363; }
 
-.height-30pr {
-  height: 30%; }
+.bg-image { background-repeat: no-repeat; background-size: cover; }
 
-.height-70pr {
-  height: 70%; }
+.h-32 { height: 2rem; }
 
-.h-100pr {
-  height: 100%; }
+.height-30pr { height: 30%; }
 
-#pokeball {
-  background-image: url("../icon/pokeball_gray.png"); }
+.height-70pr { height: 70%; }
 
-#heart {
-  background-image: url("../icon/valentines-heart.png"); }
+.h-100pr { height: 100%; }
 
-#data {
-  background-image: url("../icon/data.png"); }
+#pokeball { background-image: url("../icon/pokeball_gray.png"); }
 
-#close-modal {
-  background-image: url("../icon/cross-out.png"); }
+#heart { background-image: url("../icon/valentines-heart.png"); }
 
-@media (min-width: 576px) {
-  .modal-dialog {
-    max-width: 69rem; } }
-.trap {
-  width: 100%;
-  height: 0px;
-  border-right: 20px solid transparent;
-  border-left: 20px solid transparent;
-  border-bottom: 70px solid white; }
+#data { background-image: url("../icon/data.png"); }
+
+#close-modal { background-image: url("../icon/cross-out.png"); }
+
+@media (min-width: 576px) { .modal-dialog { max-width: 69rem; } }
+.trap { width: 100%; height: 0px; border-right: 20px solid transparent; border-left: 20px solid transparent; border-bottom: 70px solid white; }
 
 /*# sourceMappingURL=style.css.map */
